@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-xyz/examples
+module github.com/MartinSchmidt123/pulumi-phpipam/examples
 
 go 1.15
 
