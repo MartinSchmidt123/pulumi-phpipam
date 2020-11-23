@@ -23,7 +23,7 @@ import (
 	shimv1 "github.com/pulumi/pulumi-terraform-bridge/v2/pkg/tfshim/sdk-v1"
 	"github.com/pulumi/pulumi/sdk/v2/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v2/go/common/tokens"
-	"github.com/terraform-providers/terraform-provider-phpipam/phpipam"
+	"github.com/lord-kyron/terraform-provider-phpipam/plugin/providers/phpipam"
 )
 
 // all of the token components used below.
@@ -115,7 +115,12 @@ func Provider() tfbridge.ProviderInfo {
 			// are below - the single line form is the common case. The multi-line form is
 			// needed only if you wish to override types or other default options.
 			//
-			// "aws_iam_role": {Tok: makeResource(mainMod, "IamRole")}
+			"phpipam_address": {Tok: makeResource(mainMod, "Address")},
+			"phpipam_first_free_address": {Tok: makeResource(mainMod, "FirstFreeAddress")},
+			"phpipam_first_free_subnet": {Tok: makeResource(mainMod, "FirstFreeSubnet")},
+			"phpipam_section": {Tok: makeResource(mainMod, "Section")},
+			"phpipam_subnet": {Tok: makeResource(mainMod, "Subnet")},
+			"phpipam_vlan": {Tok: makeResource(mainMod, "Vlan")},
 			//
 			// "aws_acm_certificate": {
 			// 	Tok: makeResource(mainMod, "Certificate"),
@@ -127,7 +132,15 @@ func Provider() tfbridge.ProviderInfo {
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			// Map each resource in the Terraform provider to a Pulumi function. An example
 			// is below.
-			// "aws_ami": {Tok: makeDataSource(mainMod, "getAmi")},
+			"phpipam_address": {Tok: makeDataSource(mainMod, "getAddress")},
+			"phpipam_addresses": {Tok: makeDataSource(mainMod, "getAddresses")},
+			"phpipam_first_free_address": {Tok: makeDataSource(mainMod, "getFirstFreeAddress")},
+			"phpipam_first_free_subnet": {Tok: makeDataSource(mainMod, "getFirstFreeSubnet")},
+			"phpipam_section": {Tok: makeDataSource(mainMod, "getSection")},
+			"phpipam_subnet": {Tok: makeDataSource(mainMod, "getSubnet")},
+			"phpipam_subnets": {Tok: makeDataSource(mainMod, "getSubnets")},
+			"phpipam_vlan": {Tok: makeDataSource(mainMod, "getVlan")},
+
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// List any npm dependencies and their versions

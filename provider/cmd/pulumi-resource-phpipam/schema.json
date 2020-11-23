@@ -1,0 +1,1899 @@
+{
+    "name": "phpipam",
+    "description": "A Pulumi package for creating and managing phpipam cloud resources.",
+    "keywords": [
+        "pulumi",
+        "phpipam"
+    ],
+    "homepage": "https://pulumi.io",
+    "license": "Apache-2.0",
+    "attribution": "This Pulumi package is based on the [`phpipam` Terraform Provider](https://github.com/terraform-providers/terraform-provider-phpipam).",
+    "repository": "https://github.com/MartinSchmidt123/pulumi-phpipam",
+    "meta": {
+        "moduleFormat": "(.*)(?:/[^/]*)"
+    },
+    "config": {
+        "variables": {
+            "appId": {
+                "type": "string",
+                "description": "The application ID required for API requests\n"
+            },
+            "endpoint": {
+                "type": "string",
+                "description": "The full URL (plus path) to the API endpoint\n"
+            },
+            "insecure": {
+                "type": "boolean",
+                "description": "Whether server should be accessed without verifying the TLS certificate.\n"
+            },
+            "password": {
+                "type": "string",
+                "description": "The password of the PHPIPAM account\n"
+            },
+            "username": {
+                "type": "string",
+                "description": "The username of the PHPIPAM account\n"
+            }
+        }
+    },
+    "provider": {
+        "description": "The provider type for the phpipam package. By default, resources use package-wide configuration\nsettings, however an explicit `Provider` instance may be created and passed during resource\nconstruction to achieve fine-grained programmatic control over provider settings. See the\n[documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.\n",
+        "inputProperties": {
+            "appId": {
+                "type": "string",
+                "description": "The application ID required for API requests\n"
+            },
+            "endpoint": {
+                "type": "string",
+                "description": "The full URL (plus path) to the API endpoint\n"
+            },
+            "insecure": {
+                "type": "boolean",
+                "description": "Whether server should be accessed without verifying the TLS certificate.\n"
+            },
+            "password": {
+                "type": "string",
+                "description": "The password of the PHPIPAM account\n"
+            },
+            "username": {
+                "type": "string",
+                "description": "The username of the PHPIPAM account\n"
+            }
+        }
+    },
+    "resources": {
+        "phpipam:index/address:Address": {
+            "properties": {
+                "addressId": {
+                    "type": "integer"
+                },
+                "customFields": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                },
+                "deviceId": {
+                    "type": "integer"
+                },
+                "editDate": {
+                    "type": "string"
+                },
+                "excludePing": {
+                    "type": "boolean"
+                },
+                "hostname": {
+                    "type": "string"
+                },
+                "ipAddress": {
+                    "type": "string"
+                },
+                "isGateway": {
+                    "type": "boolean"
+                },
+                "lastSeen": {
+                    "type": "string"
+                },
+                "macAddress": {
+                    "type": "string"
+                },
+                "note": {
+                    "type": "string"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "ptrRecordId": {
+                    "type": "integer"
+                },
+                "removeDnsOnDelete": {
+                    "type": "boolean"
+                },
+                "skipPtrRecord": {
+                    "type": "boolean"
+                },
+                "stateTagId": {
+                    "type": "integer"
+                },
+                "subnetId": {
+                    "type": "integer"
+                },
+                "switchPortLabel": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "addressId",
+                "description",
+                "deviceId",
+                "editDate",
+                "excludePing",
+                "hostname",
+                "ipAddress",
+                "isGateway",
+                "lastSeen",
+                "macAddress",
+                "note",
+                "owner",
+                "ptrRecordId",
+                "skipPtrRecord",
+                "stateTagId",
+                "subnetId",
+                "switchPortLabel"
+            ],
+            "inputProperties": {
+                "customFields": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                },
+                "deviceId": {
+                    "type": "integer"
+                },
+                "excludePing": {
+                    "type": "boolean"
+                },
+                "hostname": {
+                    "type": "string"
+                },
+                "ipAddress": {
+                    "type": "string"
+                },
+                "isGateway": {
+                    "type": "boolean"
+                },
+                "macAddress": {
+                    "type": "string"
+                },
+                "note": {
+                    "type": "string"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "ptrRecordId": {
+                    "type": "integer"
+                },
+                "removeDnsOnDelete": {
+                    "type": "boolean"
+                },
+                "skipPtrRecord": {
+                    "type": "boolean"
+                },
+                "stateTagId": {
+                    "type": "integer"
+                },
+                "subnetId": {
+                    "type": "integer"
+                },
+                "switchPortLabel": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "ipAddress",
+                "subnetId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Address resources.\n",
+                "properties": {
+                    "addressId": {
+                        "type": "integer"
+                    },
+                    "customFields": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "deviceId": {
+                        "type": "integer"
+                    },
+                    "editDate": {
+                        "type": "string"
+                    },
+                    "excludePing": {
+                        "type": "boolean"
+                    },
+                    "hostname": {
+                        "type": "string"
+                    },
+                    "ipAddress": {
+                        "type": "string"
+                    },
+                    "isGateway": {
+                        "type": "boolean"
+                    },
+                    "lastSeen": {
+                        "type": "string"
+                    },
+                    "macAddress": {
+                        "type": "string"
+                    },
+                    "note": {
+                        "type": "string"
+                    },
+                    "owner": {
+                        "type": "string"
+                    },
+                    "ptrRecordId": {
+                        "type": "integer"
+                    },
+                    "removeDnsOnDelete": {
+                        "type": "boolean"
+                    },
+                    "skipPtrRecord": {
+                        "type": "boolean"
+                    },
+                    "stateTagId": {
+                        "type": "integer"
+                    },
+                    "subnetId": {
+                        "type": "integer"
+                    },
+                    "switchPortLabel": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "phpipam:index/firstFreeAddress:FirstFreeAddress": {
+            "properties": {
+                "addressId": {
+                    "type": "integer"
+                },
+                "customFields": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                },
+                "deviceId": {
+                    "type": "integer"
+                },
+                "editDate": {
+                    "type": "string"
+                },
+                "excludePing": {
+                    "type": "boolean"
+                },
+                "hostname": {
+                    "type": "string"
+                },
+                "ipAddress": {
+                    "type": "string"
+                },
+                "isGateway": {
+                    "type": "boolean"
+                },
+                "lastSeen": {
+                    "type": "string"
+                },
+                "macAddress": {
+                    "type": "string"
+                },
+                "note": {
+                    "type": "string"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "ptrRecordId": {
+                    "type": "integer"
+                },
+                "skipPtrRecord": {
+                    "type": "boolean"
+                },
+                "stateTagId": {
+                    "type": "integer"
+                },
+                "subnetId": {
+                    "type": "integer"
+                },
+                "switchPortLabel": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "addressId",
+                "description",
+                "deviceId",
+                "editDate",
+                "excludePing",
+                "hostname",
+                "ipAddress",
+                "isGateway",
+                "lastSeen",
+                "macAddress",
+                "note",
+                "owner",
+                "ptrRecordId",
+                "skipPtrRecord",
+                "stateTagId",
+                "subnetId",
+                "switchPortLabel"
+            ],
+            "inputProperties": {
+                "customFields": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                },
+                "deviceId": {
+                    "type": "integer"
+                },
+                "excludePing": {
+                    "type": "boolean"
+                },
+                "hostname": {
+                    "type": "string"
+                },
+                "isGateway": {
+                    "type": "boolean"
+                },
+                "macAddress": {
+                    "type": "string"
+                },
+                "note": {
+                    "type": "string"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "ptrRecordId": {
+                    "type": "integer"
+                },
+                "skipPtrRecord": {
+                    "type": "boolean"
+                },
+                "stateTagId": {
+                    "type": "integer"
+                },
+                "subnetId": {
+                    "type": "integer"
+                },
+                "switchPortLabel": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "subnetId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering FirstFreeAddress resources.\n",
+                "properties": {
+                    "addressId": {
+                        "type": "integer"
+                    },
+                    "customFields": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "deviceId": {
+                        "type": "integer"
+                    },
+                    "editDate": {
+                        "type": "string"
+                    },
+                    "excludePing": {
+                        "type": "boolean"
+                    },
+                    "hostname": {
+                        "type": "string"
+                    },
+                    "ipAddress": {
+                        "type": "string"
+                    },
+                    "isGateway": {
+                        "type": "boolean"
+                    },
+                    "lastSeen": {
+                        "type": "string"
+                    },
+                    "macAddress": {
+                        "type": "string"
+                    },
+                    "note": {
+                        "type": "string"
+                    },
+                    "owner": {
+                        "type": "string"
+                    },
+                    "ptrRecordId": {
+                        "type": "integer"
+                    },
+                    "skipPtrRecord": {
+                        "type": "boolean"
+                    },
+                    "stateTagId": {
+                        "type": "integer"
+                    },
+                    "subnetId": {
+                        "type": "integer"
+                    },
+                    "switchPortLabel": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "phpipam:index/firstFreeSubnet:FirstFreeSubnet": {
+            "properties": {
+                "allowIpRequests": {
+                    "type": "boolean"
+                },
+                "createPtrRecords": {
+                    "type": "boolean"
+                },
+                "customFields": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                },
+                "displayHostnames": {
+                    "type": "boolean"
+                },
+                "editDate": {
+                    "type": "string"
+                },
+                "gateway": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                },
+                "gatewayId": {
+                    "type": "string"
+                },
+                "hostDiscoveryEnabled": {
+                    "type": "boolean"
+                },
+                "includeInPing": {
+                    "type": "boolean"
+                },
+                "isFolder": {
+                    "type": "boolean"
+                },
+                "isFull": {
+                    "type": "boolean"
+                },
+                "linkedSubnetId": {
+                    "type": "integer"
+                },
+                "locationId": {
+                    "type": "integer"
+                },
+                "masterSubnetId": {
+                    "type": "integer"
+                },
+                "nameserverId": {
+                    "type": "integer"
+                },
+                "parentSubnetId": {
+                    "type": "integer"
+                },
+                "permissions": {
+                    "type": "string"
+                },
+                "scanAgentId": {
+                    "type": "integer"
+                },
+                "sectionId": {
+                    "type": "integer"
+                },
+                "showName": {
+                    "type": "boolean"
+                },
+                "subnetAddress": {
+                    "type": "string"
+                },
+                "subnetId": {
+                    "type": "integer"
+                },
+                "subnetMask": {
+                    "type": "integer"
+                },
+                "utilizationThreshold": {
+                    "type": "integer"
+                },
+                "vlanId": {
+                    "type": "integer"
+                },
+                "vrfId": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "allowIpRequests",
+                "createPtrRecords",
+                "description",
+                "displayHostnames",
+                "editDate",
+                "gateway",
+                "gatewayId",
+                "hostDiscoveryEnabled",
+                "includeInPing",
+                "isFolder",
+                "isFull",
+                "linkedSubnetId",
+                "locationId",
+                "masterSubnetId",
+                "nameserverId",
+                "parentSubnetId",
+                "permissions",
+                "scanAgentId",
+                "sectionId",
+                "showName",
+                "subnetAddress",
+                "subnetId",
+                "subnetMask",
+                "utilizationThreshold",
+                "vlanId",
+                "vrfId"
+            ],
+            "inputProperties": {
+                "allowIpRequests": {
+                    "type": "boolean"
+                },
+                "createPtrRecords": {
+                    "type": "boolean"
+                },
+                "customFields": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                },
+                "displayHostnames": {
+                    "type": "boolean"
+                },
+                "includeInPing": {
+                    "type": "boolean"
+                },
+                "isFull": {
+                    "type": "boolean"
+                },
+                "linkedSubnetId": {
+                    "type": "integer"
+                },
+                "masterSubnetId": {
+                    "type": "integer"
+                },
+                "nameserverId": {
+                    "type": "integer"
+                },
+                "parentSubnetId": {
+                    "type": "integer"
+                },
+                "scanAgentId": {
+                    "type": "integer"
+                },
+                "showName": {
+                    "type": "boolean"
+                },
+                "subnetMask": {
+                    "type": "integer"
+                },
+                "utilizationThreshold": {
+                    "type": "integer"
+                },
+                "vlanId": {
+                    "type": "integer"
+                },
+                "vrfId": {
+                    "type": "integer"
+                }
+            },
+            "requiredInputs": [
+                "parentSubnetId",
+                "subnetMask"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering FirstFreeSubnet resources.\n",
+                "properties": {
+                    "allowIpRequests": {
+                        "type": "boolean"
+                    },
+                    "createPtrRecords": {
+                        "type": "boolean"
+                    },
+                    "customFields": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "displayHostnames": {
+                        "type": "boolean"
+                    },
+                    "editDate": {
+                        "type": "string"
+                    },
+                    "gateway": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "gatewayId": {
+                        "type": "string"
+                    },
+                    "hostDiscoveryEnabled": {
+                        "type": "boolean"
+                    },
+                    "includeInPing": {
+                        "type": "boolean"
+                    },
+                    "isFolder": {
+                        "type": "boolean"
+                    },
+                    "isFull": {
+                        "type": "boolean"
+                    },
+                    "linkedSubnetId": {
+                        "type": "integer"
+                    },
+                    "locationId": {
+                        "type": "integer"
+                    },
+                    "masterSubnetId": {
+                        "type": "integer"
+                    },
+                    "nameserverId": {
+                        "type": "integer"
+                    },
+                    "parentSubnetId": {
+                        "type": "integer"
+                    },
+                    "permissions": {
+                        "type": "string"
+                    },
+                    "scanAgentId": {
+                        "type": "integer"
+                    },
+                    "sectionId": {
+                        "type": "integer"
+                    },
+                    "showName": {
+                        "type": "boolean"
+                    },
+                    "subnetAddress": {
+                        "type": "string"
+                    },
+                    "subnetId": {
+                        "type": "integer"
+                    },
+                    "subnetMask": {
+                        "type": "integer"
+                    },
+                    "utilizationThreshold": {
+                        "type": "integer"
+                    },
+                    "vlanId": {
+                        "type": "integer"
+                    },
+                    "vrfId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "phpipam:index/section:Section": {
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "displayOrder": {
+                    "type": "integer"
+                },
+                "dnsResolverId": {
+                    "type": "integer"
+                },
+                "editDate": {
+                    "type": "string"
+                },
+                "masterSectionId": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "permissions": {
+                    "type": "string"
+                },
+                "sectionId": {
+                    "type": "integer"
+                },
+                "showSupernetOnly": {
+                    "type": "boolean"
+                },
+                "showVlanInSubnetListing": {
+                    "type": "boolean"
+                },
+                "showVrfInSubnetListing": {
+                    "type": "boolean"
+                },
+                "strictMode": {
+                    "type": "boolean"
+                },
+                "subnetOrdering": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "displayOrder",
+                "dnsResolverId",
+                "editDate",
+                "masterSectionId",
+                "name",
+                "permissions",
+                "sectionId",
+                "showSupernetOnly",
+                "showVlanInSubnetListing",
+                "showVrfInSubnetListing",
+                "strictMode",
+                "subnetOrdering"
+            ],
+            "inputProperties": {
+                "description": {
+                    "type": "string"
+                },
+                "displayOrder": {
+                    "type": "integer"
+                },
+                "dnsResolverId": {
+                    "type": "integer"
+                },
+                "masterSectionId": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "showSupernetOnly": {
+                    "type": "boolean"
+                },
+                "showVlanInSubnetListing": {
+                    "type": "boolean"
+                },
+                "showVrfInSubnetListing": {
+                    "type": "boolean"
+                },
+                "strictMode": {
+                    "type": "boolean"
+                },
+                "subnetOrdering": {
+                    "type": "string"
+                }
+            },
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Section resources.\n",
+                "properties": {
+                    "description": {
+                        "type": "string"
+                    },
+                    "displayOrder": {
+                        "type": "integer"
+                    },
+                    "dnsResolverId": {
+                        "type": "integer"
+                    },
+                    "editDate": {
+                        "type": "string"
+                    },
+                    "masterSectionId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "permissions": {
+                        "type": "string"
+                    },
+                    "sectionId": {
+                        "type": "integer"
+                    },
+                    "showSupernetOnly": {
+                        "type": "boolean"
+                    },
+                    "showVlanInSubnetListing": {
+                        "type": "boolean"
+                    },
+                    "showVrfInSubnetListing": {
+                        "type": "boolean"
+                    },
+                    "strictMode": {
+                        "type": "boolean"
+                    },
+                    "subnetOrdering": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "phpipam:index/subnet:Subnet": {
+            "properties": {
+                "allowIpRequests": {
+                    "type": "boolean"
+                },
+                "createPtrRecords": {
+                    "type": "boolean"
+                },
+                "customFields": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                },
+                "displayHostnames": {
+                    "type": "boolean"
+                },
+                "editDate": {
+                    "type": "string"
+                },
+                "gateway": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                },
+                "gatewayId": {
+                    "type": "string"
+                },
+                "hostDiscoveryEnabled": {
+                    "type": "boolean"
+                },
+                "includeInPing": {
+                    "type": "boolean"
+                },
+                "isFolder": {
+                    "type": "boolean"
+                },
+                "isFull": {
+                    "type": "boolean"
+                },
+                "linkedSubnetId": {
+                    "type": "integer"
+                },
+                "locationId": {
+                    "type": "integer"
+                },
+                "masterSubnetId": {
+                    "type": "integer"
+                },
+                "nameserverId": {
+                    "type": "integer"
+                },
+                "parentSubnetId": {
+                    "type": "integer"
+                },
+                "permissions": {
+                    "type": "string"
+                },
+                "scanAgentId": {
+                    "type": "integer"
+                },
+                "sectionId": {
+                    "type": "integer"
+                },
+                "showName": {
+                    "type": "boolean"
+                },
+                "subnetAddress": {
+                    "type": "string"
+                },
+                "subnetId": {
+                    "type": "integer"
+                },
+                "subnetMask": {
+                    "type": "integer"
+                },
+                "utilizationThreshold": {
+                    "type": "integer"
+                },
+                "vlanId": {
+                    "type": "integer"
+                },
+                "vrfId": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "allowIpRequests",
+                "createPtrRecords",
+                "description",
+                "displayHostnames",
+                "editDate",
+                "gateway",
+                "gatewayId",
+                "hostDiscoveryEnabled",
+                "includeInPing",
+                "isFolder",
+                "isFull",
+                "linkedSubnetId",
+                "locationId",
+                "masterSubnetId",
+                "nameserverId",
+                "parentSubnetId",
+                "permissions",
+                "scanAgentId",
+                "sectionId",
+                "showName",
+                "subnetAddress",
+                "subnetId",
+                "subnetMask",
+                "utilizationThreshold",
+                "vlanId",
+                "vrfId"
+            ],
+            "inputProperties": {
+                "allowIpRequests": {
+                    "type": "boolean"
+                },
+                "createPtrRecords": {
+                    "type": "boolean"
+                },
+                "customFields": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                },
+                "displayHostnames": {
+                    "type": "boolean"
+                },
+                "includeInPing": {
+                    "type": "boolean"
+                },
+                "isFull": {
+                    "type": "boolean"
+                },
+                "linkedSubnetId": {
+                    "type": "integer"
+                },
+                "masterSubnetId": {
+                    "type": "integer"
+                },
+                "nameserverId": {
+                    "type": "integer"
+                },
+                "scanAgentId": {
+                    "type": "integer"
+                },
+                "sectionId": {
+                    "type": "integer"
+                },
+                "showName": {
+                    "type": "boolean"
+                },
+                "subnetAddress": {
+                    "type": "string"
+                },
+                "subnetMask": {
+                    "type": "integer"
+                },
+                "utilizationThreshold": {
+                    "type": "integer"
+                },
+                "vlanId": {
+                    "type": "integer"
+                },
+                "vrfId": {
+                    "type": "integer"
+                }
+            },
+            "requiredInputs": [
+                "sectionId",
+                "subnetAddress",
+                "subnetMask"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Subnet resources.\n",
+                "properties": {
+                    "allowIpRequests": {
+                        "type": "boolean"
+                    },
+                    "createPtrRecords": {
+                        "type": "boolean"
+                    },
+                    "customFields": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "displayHostnames": {
+                        "type": "boolean"
+                    },
+                    "editDate": {
+                        "type": "string"
+                    },
+                    "gateway": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "gatewayId": {
+                        "type": "string"
+                    },
+                    "hostDiscoveryEnabled": {
+                        "type": "boolean"
+                    },
+                    "includeInPing": {
+                        "type": "boolean"
+                    },
+                    "isFolder": {
+                        "type": "boolean"
+                    },
+                    "isFull": {
+                        "type": "boolean"
+                    },
+                    "linkedSubnetId": {
+                        "type": "integer"
+                    },
+                    "locationId": {
+                        "type": "integer"
+                    },
+                    "masterSubnetId": {
+                        "type": "integer"
+                    },
+                    "nameserverId": {
+                        "type": "integer"
+                    },
+                    "parentSubnetId": {
+                        "type": "integer"
+                    },
+                    "permissions": {
+                        "type": "string"
+                    },
+                    "scanAgentId": {
+                        "type": "integer"
+                    },
+                    "sectionId": {
+                        "type": "integer"
+                    },
+                    "showName": {
+                        "type": "boolean"
+                    },
+                    "subnetAddress": {
+                        "type": "string"
+                    },
+                    "subnetId": {
+                        "type": "integer"
+                    },
+                    "subnetMask": {
+                        "type": "integer"
+                    },
+                    "utilizationThreshold": {
+                        "type": "integer"
+                    },
+                    "vlanId": {
+                        "type": "integer"
+                    },
+                    "vrfId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "phpipam:index/vlan:Vlan": {
+            "properties": {
+                "customFields": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                },
+                "editDate": {
+                    "type": "string"
+                },
+                "l2DomainId": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "number": {
+                    "type": "integer"
+                },
+                "vlanId": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "description",
+                "editDate",
+                "l2DomainId",
+                "name",
+                "number",
+                "vlanId"
+            ],
+            "inputProperties": {
+                "customFields": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "pulumi.json#/Any"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                },
+                "l2DomainId": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "number": {
+                    "type": "integer"
+                }
+            },
+            "requiredInputs": [
+                "number"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Vlan resources.\n",
+                "properties": {
+                    "customFields": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "editDate": {
+                        "type": "string"
+                    },
+                    "l2DomainId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "number": {
+                        "type": "integer"
+                    },
+                    "vlanId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "functions": {
+        "phpipam:index/getAddress:getAddress": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getAddress.\n",
+                "properties": {
+                    "addressId": {
+                        "type": "integer"
+                    },
+                    "customFieldFilter": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "hostname": {
+                        "type": "string"
+                    },
+                    "ipAddress": {
+                        "type": "string"
+                    },
+                    "subnetId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAddress.\n",
+                "properties": {
+                    "addressId": {
+                        "type": "integer"
+                    },
+                    "customFieldFilter": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "customFields": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "deviceId": {
+                        "type": "integer"
+                    },
+                    "editDate": {
+                        "type": "string"
+                    },
+                    "excludePing": {
+                        "type": "boolean"
+                    },
+                    "hostname": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "ipAddress": {
+                        "type": "string"
+                    },
+                    "isGateway": {
+                        "type": "boolean"
+                    },
+                    "lastSeen": {
+                        "type": "string"
+                    },
+                    "macAddress": {
+                        "type": "string"
+                    },
+                    "note": {
+                        "type": "string"
+                    },
+                    "owner": {
+                        "type": "string"
+                    },
+                    "ptrRecordId": {
+                        "type": "integer"
+                    },
+                    "skipPtrRecord": {
+                        "type": "boolean"
+                    },
+                    "stateTagId": {
+                        "type": "integer"
+                    },
+                    "subnetId": {
+                        "type": "integer"
+                    },
+                    "switchPortLabel": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "addressId",
+                    "customFields",
+                    "description",
+                    "deviceId",
+                    "editDate",
+                    "excludePing",
+                    "hostname",
+                    "ipAddress",
+                    "isGateway",
+                    "lastSeen",
+                    "macAddress",
+                    "note",
+                    "owner",
+                    "ptrRecordId",
+                    "skipPtrRecord",
+                    "stateTagId",
+                    "subnetId",
+                    "switchPortLabel",
+                    "id"
+                ]
+            }
+        },
+        "phpipam:index/getAddresses:getAddresses": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getAddresses.\n",
+                "properties": {
+                    "customFieldFilter": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "hostname": {
+                        "type": "string"
+                    },
+                    "subnetId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "subnetId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAddresses.\n",
+                "properties": {
+                    "addressIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "customFieldFilter": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "hostname": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "subnetId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "addressIds",
+                    "subnetId",
+                    "id"
+                ]
+            }
+        },
+        "phpipam:index/getFirstFreeAddress:getFirstFreeAddress": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getFirstFreeAddress.\n",
+                "properties": {
+                    "subnetId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "subnetId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getFirstFreeAddress.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "ipAddress": {
+                        "type": "string"
+                    },
+                    "subnetId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "ipAddress",
+                    "subnetId",
+                    "id"
+                ]
+            }
+        },
+        "phpipam:index/getFirstFreeSubnet:getFirstFreeSubnet": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getFirstFreeSubnet.\n",
+                "properties": {
+                    "subnetId": {
+                        "type": "integer"
+                    },
+                    "subnetMask": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "subnetId",
+                    "subnetMask"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getFirstFreeSubnet.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "ipAddress": {
+                        "type": "string"
+                    },
+                    "subnetId": {
+                        "type": "integer"
+                    },
+                    "subnetMask": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "ipAddress",
+                    "subnetId",
+                    "subnetMask",
+                    "id"
+                ]
+            }
+        },
+        "phpipam:index/getSection:getSection": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getSection.\n",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "sectionId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getSection.\n",
+                "properties": {
+                    "description": {
+                        "type": "string"
+                    },
+                    "displayOrder": {
+                        "type": "integer"
+                    },
+                    "dnsResolverId": {
+                        "type": "integer"
+                    },
+                    "editDate": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "masterSectionId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "permissions": {
+                        "type": "string"
+                    },
+                    "sectionId": {
+                        "type": "integer"
+                    },
+                    "showSupernetOnly": {
+                        "type": "boolean"
+                    },
+                    "showVlanInSubnetListing": {
+                        "type": "boolean"
+                    },
+                    "showVrfInSubnetListing": {
+                        "type": "boolean"
+                    },
+                    "strictMode": {
+                        "type": "boolean"
+                    },
+                    "subnetOrdering": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "description",
+                    "displayOrder",
+                    "dnsResolverId",
+                    "editDate",
+                    "masterSectionId",
+                    "name",
+                    "permissions",
+                    "sectionId",
+                    "showSupernetOnly",
+                    "showVlanInSubnetListing",
+                    "showVrfInSubnetListing",
+                    "strictMode",
+                    "subnetOrdering",
+                    "id"
+                ]
+            }
+        },
+        "phpipam:index/getSubnet:getSubnet": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getSubnet.\n",
+                "properties": {
+                    "customFieldFilter": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "descriptionMatch": {
+                        "type": "string"
+                    },
+                    "sectionId": {
+                        "type": "integer"
+                    },
+                    "subnetAddress": {
+                        "type": "string"
+                    },
+                    "subnetId": {
+                        "type": "integer"
+                    },
+                    "subnetMask": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getSubnet.\n",
+                "properties": {
+                    "allowIpRequests": {
+                        "type": "boolean"
+                    },
+                    "createPtrRecords": {
+                        "type": "boolean"
+                    },
+                    "customFieldFilter": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "customFields": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "descriptionMatch": {
+                        "type": "string"
+                    },
+                    "displayHostnames": {
+                        "type": "boolean"
+                    },
+                    "editDate": {
+                        "type": "string"
+                    },
+                    "gateway": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "gatewayId": {
+                        "type": "string"
+                    },
+                    "hostDiscoveryEnabled": {
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "includeInPing": {
+                        "type": "boolean"
+                    },
+                    "isFolder": {
+                        "type": "boolean"
+                    },
+                    "isFull": {
+                        "type": "boolean"
+                    },
+                    "linkedSubnetId": {
+                        "type": "integer"
+                    },
+                    "locationId": {
+                        "type": "integer"
+                    },
+                    "masterSubnetId": {
+                        "type": "integer"
+                    },
+                    "nameserverId": {
+                        "type": "integer"
+                    },
+                    "parentSubnetId": {
+                        "type": "integer"
+                    },
+                    "permissions": {
+                        "type": "string"
+                    },
+                    "scanAgentId": {
+                        "type": "integer"
+                    },
+                    "sectionId": {
+                        "type": "integer"
+                    },
+                    "showName": {
+                        "type": "boolean"
+                    },
+                    "subnetAddress": {
+                        "type": "string"
+                    },
+                    "subnetId": {
+                        "type": "integer"
+                    },
+                    "subnetMask": {
+                        "type": "integer"
+                    },
+                    "utilizationThreshold": {
+                        "type": "integer"
+                    },
+                    "vlanId": {
+                        "type": "integer"
+                    },
+                    "vrfId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "allowIpRequests",
+                    "createPtrRecords",
+                    "customFields",
+                    "description",
+                    "displayHostnames",
+                    "editDate",
+                    "gateway",
+                    "gatewayId",
+                    "hostDiscoveryEnabled",
+                    "includeInPing",
+                    "isFolder",
+                    "isFull",
+                    "linkedSubnetId",
+                    "locationId",
+                    "masterSubnetId",
+                    "nameserverId",
+                    "parentSubnetId",
+                    "permissions",
+                    "scanAgentId",
+                    "sectionId",
+                    "showName",
+                    "subnetAddress",
+                    "subnetId",
+                    "subnetMask",
+                    "utilizationThreshold",
+                    "vlanId",
+                    "vrfId",
+                    "id"
+                ]
+            }
+        },
+        "phpipam:index/getSubnets:getSubnets": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getSubnets.\n",
+                "properties": {
+                    "customFieldFilter": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "descriptionMatch": {
+                        "type": "string"
+                    },
+                    "sectionId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "sectionId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getSubnets.\n",
+                "properties": {
+                    "customFieldFilter": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "descriptionMatch": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "sectionId": {
+                        "type": "integer"
+                    },
+                    "subnetIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "sectionId",
+                    "subnetIds",
+                    "id"
+                ]
+            }
+        },
+        "phpipam:index/getVlan:getVlan": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getVlan.\n",
+                "properties": {
+                    "number": {
+                        "type": "integer"
+                    },
+                    "vlanId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getVlan.\n",
+                "properties": {
+                    "customFields": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "editDate": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "l2DomainId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "number": {
+                        "type": "integer"
+                    },
+                    "vlanId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "customFields",
+                    "description",
+                    "editDate",
+                    "l2DomainId",
+                    "name",
+                    "number",
+                    "vlanId",
+                    "id"
+                ]
+            }
+        }
+    },
+    "language": {
+        "csharp": {
+            "namespaces": null,
+            "packageReferences": {
+                "Pulumi": "2.*",
+                "System.Collections.Immutable": "1.6.0"
+            }
+        },
+        "nodejs": {
+            "dependencies": {
+                "@pulumi/pulumi": "^2.0.0"
+            },
+            "devDependencies": {
+                "@types/mime": "^2.0.0",
+                "@types/node": "^8.0.25"
+            },
+            "disableUnionOutputTypes": true,
+            "packageDescription": "A Pulumi package for creating and managing phpipam cloud resources.",
+            "packageName": "",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/terraform-providers/terraform-provider-phpipam)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-phpipam` repo](https://github.com/pulumi/pulumi-phpipam/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-providers/terraform-provider-phpipam` repo](https://github.com/terraform-providers/terraform-provider-phpipam/issues).",
+            "typescriptVersion": ""
+        },
+        "python": {
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/terraform-providers/terraform-provider-phpipam)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-phpipam` repo](https://github.com/pulumi/pulumi-phpipam/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-providers/terraform-provider-phpipam` repo](https://github.com/terraform-providers/terraform-provider-phpipam/issues).",
+            "requires": {
+                "pulumi": "\u003e=2.9.0,\u003c3.0.0"
+            },
+            "usesIOClasses": false
+        }
+    }
+}

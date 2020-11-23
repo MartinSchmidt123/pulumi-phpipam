@@ -1,7 +1,7 @@
 PROJECT_NAME := phpipam Package
 
 PACK             := phpipam
-ORG              := pulumi
+ORG              := MartinSchmidt123
 PROJECT          := github.com/${ORG}/pulumi-${PACK}
 NODE_MODULE_NAME := @pulumi/${PACK}
 TF_NAME          := ${PACK}
@@ -10,7 +10,8 @@ VERSION_PATH     := ${PROVIDER_PATH}/pkg/version.Version
 
 TFGEN           := pulumi-tfgen-${PACK}
 PROVIDER        := pulumi-resource-${PACK}
-VERSION         := $(shell pulumictl get version)
+VERSION         := 0.0.1
+# $(shell pulumictl get version)
 
 TESTPARALLELISM := 4
 
